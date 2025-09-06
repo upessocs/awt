@@ -1,19 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sapid</title>
     <script src="./jquery-3.7.1.min.js"></script>
+    <script src="./angular.min.js"></script>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    <h1>AWT Progress</h1>
-    <section>
+    <div class="container">
+            
+        <div id="jquery">
+            <h1>AWT Progress</h1>
+
+            <section>
+                <h4>Links updated using jQuery</h1>
+                <div>
+                    <h2>Class</h2>
+                    <ul id="class"></ul>
+                </div>
+                <div>
+                    <h2>Lab</h2>
+                    <ul id="lab"></ul>
+                </div>
+            </section>
+        </div>
+
+
+
+        <div id="angular" ng-app="myCtrl" ng-controller="myCtrl">
+
+            <h1>AWT Progress</h1>
+
+            <section>
+                <h4>Links updated using AngularJS</h1>
+                <div>
+                    <h2>Class</h2>
+                    <ul>
+                        <li ng-repeat="link in classlinks">
+                            <a href="{{link.url}}">{{link.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Lab</h2>
+                    <ul>
+                        <li ng-repeat="link in lablinks">
+                            <a href="{{link.url}}">{{link.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <script>
+                var app = angular.module('myCtrl', []);
+                app.controller('myCtrl', function ($scope, $http) {
+                    $http.get('./linksjson.json').then(function (response) {
+                        console.log(response.data);
+                        $scope.classlinks = response.data.filter(link => link.type === 'class');
+                        $scope.lablinks = response.data.filter(link => link.type === 'lab');
+                    });
+                });
+            </script>
+        </div>
+    </div>
+
+
+    <!-- <section>
         <div>
             <h2>lab experiments</h2>
             <a href="./lab/exp1/">lab experiment 1</a>
             <a href="./lab/exp2/">lab experiment 2</a>
+            <a href="./lab/exp3/">lab experiment 3 Angular ng-repeat</a>
         </div>
     </section>
 
@@ -28,10 +89,10 @@
                 <a href="./class/unit2/task1/">class task1 </a>
                 <a href="./class/unit2/task2/">class task2 </a>
         </div>
-    </section>
+    </section> -->
 
 
-<!-- 
+    <!-- 
     <new>hide p tags with hidden class</h1>
     <p class="hidden">with hidden class</p>
     <new>without hidden class</p>
@@ -45,6 +106,28 @@
             }, 4000);
         });
     </script> -->
-    </body>
+
+
+
+    <script>
+
+        $(document).ready(function () {
+            // Your jQuery code here
+            console.log("jQuery is ready!");
+            $.getJSON("./linksjson.json", links => {
+                console.log(links);
+                links.forEach(link => {
+                    console.log(link)
+                    var linktype = link.type
+                    var linkurl = link.url
+                    var linklabel = link.name
+                    $(`#${linktype}`).append(`
+                        <li><a href="${linkurl}">${linklabel}</a></li>
+                    `)
+                })
+            })
+        });
+    </script>
+</body>
 
 </html>

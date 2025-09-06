@@ -1,0 +1,77 @@
+[
+    {
+        "type": "lab",
+        "name": "Lab Experiment 1 description ...",
+        "url": "./lab/exp1/"
+    },
+    {
+        "type": "lab",
+        "name": "Lab Experiment 2 jquery get JSON Ajax",
+        "url": "./lab/exp2/"
+    },
+    {
+        "type": "lab",
+        "name": "Lab Experiment 3 ng-repeat and filters",
+        "url": "./lab/exp3/"
+    },
+    {
+        "type": "lab",
+        "name": "Lab Experiment 4 description...",
+        "url": "./lab/exp4/"
+    },
+    {
+        "type": "lab",
+        "name": "Lab Experiment 5 description...",
+        "url": "./lab/exp5/"
+    },
+    {
+        "type": "lab",
+        "name": "Lab Experiment 6 description...",
+        "url": "./lab/exp6/"
+    },
+    {
+        "type": "lab",
+        "name": "Lab Experiment 7 description...",
+        "url": "./lab/exp7/"
+    },
+    {
+        "type": "lab",
+        "name": "Lab Experiment 8 description...",
+        "url": "./lab/exp8/"
+    },
+    {
+        "type": "lab",
+        "name": "Lab Experiment 9 description...",
+        "url": "./lab/exp9/"
+    },
+    {
+        "type": "lab",
+        "name": "Lab Experiment 10 description...",
+        "url": "./lab/exp10/"
+    },
+    {
+        "type": "class",
+        "name": "Class Example 1 First Jquery App",
+        "url": "./class/unit1/First Jquery App/"
+    },
+    {
+        "type": "class",
+        "name": "Class Example 2 jQuery get JSON Ajax",
+        "url": "./class/unit1/Jquery_get_json_ajax/"
+    },
+    {
+        "type": "class",
+        "name": "Class Example 3 description ...",
+        "url": "./class/unit1/task1/"
+    },
+    {
+        "type": "class",
+        "name": "Class Example 6 First Angular App",
+        "url": "./class/unit2/FirstAngularApp/"
+    },
+    {
+        "type": "class",
+        "name": "Class Example 7 ngrepeat and filters",
+        "url": "./class/unit2/ngrepeat/"
+    }    
+]
